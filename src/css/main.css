@@ -1,0 +1,355 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Roboto:ital,wght@1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+}
+
+ul {
+  text-decoration: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+:root {
+  --url-img: url("../img/card1.jpg");
+}
+
+.header .nav {
+  width: 100%;
+  height: 3.6rem;
+  background-color: white;
+}
+.header .nav .navContainer {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+.header .nav .navContainer a {
+  height: 100%;
+}
+.header .nav .navContainer a figure {
+  width: 100%;
+  height: 100%;
+}
+.header .nav .navContainer a figure .logoImg {
+  height: 100%;
+  width: 42px;
+}
+.header .nav .navContainer a figure .logoImg:hover {
+  transform: scale(1.25);
+}
+.header .nav .navContainer .rightNav {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.header .nav .navContainer .rightNav .cartContainer {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.header .nav .navContainer .rightNav .cartContainer .logoBag {
+  height: 100%;
+  width: 32px;
+}
+.header .nav .navContainer .rightNav .cartContainer .logoBag:hover {
+  transform: scale(1.25);
+}
+.header .nav .navContainer .rightNav .cartContainer .cartAlert {
+  background: #FCA311;
+  color: black;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header .nav .navContainer .rightNav .btnLogin {
+  height: 80%;
+  background: #FCA311;
+  color: #000000;
+  padding: 13px 10px;
+  border-radius: 20px;
+}
+.header .nav .navContainer .rightNav .btnLogin:hover {
+  font-weight: 700;
+}
+.header .nav .navContainer .cart {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 350px;
+  min-height: 100vh;
+  padding: 20px;
+  background-color: rgb(241, 241, 241);
+  box-shadow: -2px 0 4px hsla(0deg, 4%, 15%, 0.1);
+  transition: 0.3s;
+}
+.header .nav .navContainer .cart.active {
+  right: 0;
+}
+.header .nav .navContainer .cart .cartTitle {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 2rem;
+}
+.header .nav .navContainer .cart .cartContent .cartBox {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.header .nav .navContainer .cart .cartContent .cartBox #cartItem {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+.header .nav .navContainer .cart .cartContent .cartBox .cartImg {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+.header .nav .navContainer .cart .cartContent .cartBox .detailBox {
+  display: grid;
+  row-gap: 0.5rem;
+}
+.header .nav .navContainer .cart .cartContent .cartBox .detailBox .cartProductTitle {
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+.header .nav .navContainer .cart .cartContent .cartBox .detailBox .cartPrice {
+  font-weight: 500;
+}
+.header .nav .navContainer .cart .cartContent .cartBox .detailBox .cartQuantity {
+  border: 1px solid black;
+  outline-color: black;
+  width: 2.4rem;
+  text-align: center;
+  font-size: 1rem;
+}
+.header .nav .navContainer .cart .cartContent .cartBox .buttonRemove {
+  border: none;
+}
+.header .nav .navContainer .cart .cartContent .cartBox .buttonRemove .cartRemove {
+  font-size: 24px;
+  color: black;
+  cursor: pointer;
+}
+.header .nav .navContainer .cart .cartContent .cartBox .total {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1.5rem;
+  border-top: 1px solid black;
+}
+.header .nav .navContainer .cart .cartContent .cartBox .total .totalTitle {
+  font-size: 1rem;
+  font-weight: 600;
+}
+.header .nav .navContainer .cart .cartContent .cartBox .total .totalPrice {
+  margin-left: 0.5rem;
+}
+.header .nav .navContainer .cart .cartContent .cartBox .btnBuy {
+  display: flex;
+  margin: 1.5rem auto 0 auto;
+  padding: 12px 20px;
+  border: none;
+  background-color: #fca311;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+.header .nav .navContainer .cart .cartContent .cartBox #closeCart {
+  position: absolute;
+  top: 1rem;
+  right: 0.8 rem;
+  font-size: 2rem;
+  color: black;
+  cursor: pointer;
+}
+
+@media (min-width: 600px) {
+  .header .navContainer .rightNav {
+    gap: 60px !important;
+  }
+}
+.main .hero {
+  width: 100%;
+  height: 92vh;
+  background-color: #14213D;
+  display: flex;
+  flex-flow: row wrap;
+}
+.main .hero .heroTextContainer {
+  width: 100%;
+  height: 50%;
+  padding: 10px 0;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+}
+.main .hero .heroTextContainer .heroTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #E5E5E5;
+}
+.main .hero .heroTextContainer .heroSubTitle {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #E5E5E5;
+}
+.main .hero .heroTextContainer .heroBtn {
+  color: #000000;
+  background-color: #FCA311;
+  padding: 7px 16px;
+  border-radius: 50px;
+}
+.main .hero .heroImageContainer {
+  width: 100%;
+  height: 50%;
+}
+.main .hero .heroImageContainer .heroImage {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.main .hero .wave {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 10%;
+  z-index: 1;
+}
+.main .planes {
+  height: 120vh;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 0 0 0;
+}
+.main .planes .planesSubTitle {
+  font-size: 5.2rem;
+  font-weight: 700;
+  color: #14213D;
+  text-align: center;
+  margin-bottom: 50px;
+  text-shadow: 2px 2px 12px rgb(150, 150, 150);
+}
+.main .planes .planesContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 40px;
+}
+.main .planes .planesContainer .card {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+  border-radius: 10px;
+}
+.main .planes .planesContainer .card:nth-of-type(2) {
+  --url-img: url(../img/card2.jpg);
+}
+.main .planes .planesContainer .card:nth-of-type(3) {
+  --url-img: url(../img/card3.jpg);
+}
+.main .planes .planesContainer .card:nth-of-type(4) {
+  --url-img: url(../img/card4.jpg);
+}
+.main .planes .planesContainer .card:nth-of-type(5) {
+  --url-img: url(../img/card5.jpg);
+}
+.main .planes .planesContainer .card:nth-of-type(6) {
+  --url-img: url(../img/card6.jpg);
+}
+.main .planes .planesContainer .card::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 200px;
+  background-image: var(--url-img);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 10px 10px 0 0;
+}
+.main .planes .planesContainer .card .cardContainer {
+  padding: 30px 30px;
+  background: #fafafa;
+  border-radius: 0 0 10px 10px;
+  text-align: center;
+}
+.main .planes .planesContainer .card .cardContainer .cardName {
+  font-size: 1.8rem;
+  color: #14213D;
+  font-weight: 600;
+}
+.main .planes .planesContainer .card .cardContainer .cardTexts {
+  padding: 10px 0 15px 0;
+}
+.main .planes .planesContainer .card .cardContainer .cardTexts .cardCopy {
+  font-size: 1.2rem;
+  padding-bottom: 5px;
+}
+.main .planes .planesContainer .card .cardContainer .cardTexts .price {
+  font-size: 1.1rem;
+}
+.main .planes .planesContainer .card .cardContainer .cardCta {
+  background: rgb(255, 199, 108);
+  background: linear-gradient(90deg, rgb(255, 199, 108) 0%, rgb(252, 163, 17) 100%, rgb(2, 0, 36) 100%);
+  padding: 8px 8px;
+  border-radius: 50px;
+}
+.main .planes .planesContainer .card .cardContainer .cardCta:hover {
+  background: #fca311;
+}
+
+@media (min-width: 768px) {
+  .main .hero {
+    flex-flow: row nowrap;
+    gap: 50px;
+    padding: 60px 40px;
+  }
+  .main .hero .heroTextContainer {
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    gap: 50px;
+  }
+  .main .hero .heroTextContainer .heroTitle {
+    font-size: 5rem;
+  }
+  .main .hero .heroTextContainer .heroSubTitle {
+    font-size: 2.5rem;
+  }
+  .main .hero .heroTextContainer .heroBtn {
+    padding: 16px 32px;
+    border-radius: 50px;
+  }
+  .main .hero .heroImageContainer {
+    width: 100%;
+    height: 100%;
+  }
+  .main .hero .heroImageContainer .heroImage {
+    width: 90%;
+    height: 100%;
+    border-radius: 50px 0 50px 0;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */

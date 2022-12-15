@@ -1,0 +1,24 @@
+{
+  "name": "proyectofinaljavascript",
+  "version": "1.0.0",
+  "description": "proyecto final de javascript para coderhouse",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "sass",
+    "sass:watch": "sass --watch src/scss/main.scss src/css/main.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DevDcua/ProjectoFinal-Javascript.git"
+  },
+  "author": "Agustin Decuadro",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DevDcua/ProjectoFinal-Javascript/issues"
+  },
+  "homepage": "https://github.com/DevDcua/ProjectoFinal-Javascript#readme",
+  "dependencies": {
+    "sass": "^1.56.2"
+  }
+}

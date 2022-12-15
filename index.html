@@ -5,11 +5,83 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PreEntrega1-Decuadro</title>
+
+
+    <link rel="stylesheet" href="src/css/main.css">
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
-    <h1>Calculadora de Calorias Basales, IMC y Contador de calorias en dieta 2000 cal</h1>
+    <header class="header">
+        <nav class="nav">
+            <div class="navContainer">
+                <a href="#">
+                    <figure>
+                        <img src="src/img/gym-near-svgrepo-com.svg" alt="" class="logoImg">
+                    </figure>
+                </a>
+                <div class="rightNav">
+                    <div class="cartContainer">
+                        <a href="#">
+                            <img src="src/img/bag-svgrepo-com.svg" alt="" class="logoBag" id="cartIcon">
+                        </a>
+                        <div class="cartAlert">0</div>
+                    </div>
+                    <a href="#" class="btnLogin">Iniciar Sesion</a>
+                </div>
+                <div class="cart">
+                    <h2 class="cartTitle">Tu carrito</h2>
+                    <div class="cartContent">
 
+                        <div class="cartBox" id="cartItems">
+                            <div id="cartItem">Esta vacio</div>
+                            <!-- Remove cart -->
+                           <!--  <i class='bx bxs-trash-alt cartRemove'></i> -->
 
-    <script src="../PreEntrega1-Decuadro/main.js"></script>
+                            <!-- Total -->
+                            <div class="total">
+                                <div class="totalTitle">Total</div>
+                                <div class="totalPrice">$0</div>
+                            </div>
+
+                            <!-- Buy Button -->
+                            <button type="button" class="btnBuy">Comprar ahora!</button>
+
+                            <!-- Cart Close -->
+                            <i class='bx bx-x' id="closeCart"></i>
+                        </div>
+                        
+
+                    </div>
+                </div> 
+            </div>
+                     
+        </nav>
+    </header>
+    <main class="main">
+        <section class="hero">
+            <div class="heroTextContainer">
+                <h1 class="heroTitle">No hay limites</h1>
+                <h2 class="heroSubTitle">Unete a nuestros planes y consigue tus metas</h2>
+                <a href="#planesTarget" class="heroBtn">Ver planes</a>
+            </div>
+            <div class="heroImageContainer">
+                <img src="src/img/man-working-out-with-dumbbells-in-gym.jpg" alt="" class="heroImage">
+            </div>
+        </section>
+        <section class="planes" id="planesTarget">
+            <h2 class="planesSubTitle">Planes</h2>
+            <div class="planesContainer" id="root">
+                
+            </div>
+        </section>
+        <section class="calculadoras">
+
+        </section>
+    </main>
+
+    
+
+    <script src="src/js/main.js"></script>
 </body>
 </html>

@@ -15,7 +15,7 @@
     <header class="header">
         <nav class="nav">
             <div class="navContainer">
-                <a href="#">
+                <a href="index.html">
                     <figure>
                         <img src="src/img/gym-near-svgrepo-com.svg" alt="" class="logoImg">
                     </figure>
@@ -63,7 +63,7 @@
             <div class="heroTextContainer">
                 <h1 class="heroTitle">No hay limites</h1>
                 <h2 class="heroSubTitle">Unete a nuestros planes y consigue tus metas</h2>
-                <a href="#planesTarget" class="heroBtn">Ver planes</a>
+                <a href="#" class="heroBtn">Ver planes</a>
             </div>
             <div class="heroImageContainer">
                 <img src="src/img/man-working-out-with-dumbbells-in-gym.jpg" alt="" class="heroImage">
@@ -76,7 +76,88 @@
             </div>
         </section>
         <section class="calculadoras">
-
+            <h2 class="calculadorasTitle">Calculadoras</h2>
+            <div class="calculadorasContainer">
+                <div class="caloriasBasal">
+                    <h2 class="caloriesTitle">Calorias basales</h2>
+                    <div class="caloriesControls">
+                        <form>
+                            <div class="gender">
+                                <h3>Genero</h3>
+                                <input type="radio" id="male" value="male" name="gender" checked>
+                                <label for="male">Hombre</label>
+                                <input type="radio" id="famale" value="female" name="gender">
+                                <label for="female">Mujer</label>
+                            </div>
+                            <div class="edad">
+                                <h3>Edad</h3>
+                                <input type="text" id="age" value="23">
+                            </div>
+                            <div class="altura">
+                                <h3>Altura</h3>
+                                <input type="text" id="height" value="170">
+                                <div class="unit">cm</div>
+                            </div>
+                            <div class="peso">
+                                <h3>Peso</h3>
+                                <input type="text" id="weight" value="90">
+                                <div class="unit">kg</div>
+                            </div>
+                            <div class="result">
+                                <button class="calculateCaloriesBtn" type="button">Calcular</button>
+                                <div class="resultMessage">
+                                    <span class="calories">1.994</span> Calorias/día
+                                </div>
+                                <div class="errorMessage">
+                                    <p>Datos invalidos</p>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="imc">
+                    <h2 class="imcTitle">IMC</h2>
+                    <div class="imcControls">
+                        <form>
+                            <div class="imcPeso">
+                                <h3>Peso</h3>
+                                <input type="text" id="imcWeight" value="90">
+                                <div class="unit">kg</div>
+                            </div>
+                            <div class="imcAltura">
+                                <h3>Altura</h3>
+                                <input type="text" id="imcHeight" value="170">
+                                <div class="unit">cm</div>
+                            </div>
+                            <div class="imcResult">
+                                <button class="calculateImcBtn" type="button">Calcular</button>
+                                <div class="resultImcMessage">
+                                    <span class="imcResultText"></span>
+                                </div>
+                                <div class="errorImcMessage">
+                                    <p>Datos invalidos</p>
+                                </div>
+                                <div class="infoResult">
+                                    <ul>
+                                        <li>
+                                            Peso inferior al normal -- Menos de 18.5
+                                        </li>
+                                        <li>
+                                            Normal -- 18.5 a 24.9
+                                        </li>
+                                        <li>
+                                            Peso superior al normal -- 25.0 a 29.9
+                                        </li>
+                                        <li>
+                                            Obesidad -- Más de 30.0
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
 

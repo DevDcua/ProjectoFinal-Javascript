@@ -125,13 +125,14 @@ a{
                 top: 0;
                 right: -100%;
                 width: 350px;
-                min-height: 100vh;
+                height: 100vh;
                 padding: 20px;
                 background-color: rgb(241, 241, 241);
                 box-shadow: -2px 0 4px hsl(0 4% 15% / 10%);
                 transition: 0.3s ;
+                overflow: scroll;
                 
-                &.active{
+                &.activeCart{
                     right: 0;
                 }
 
@@ -307,25 +308,13 @@ a{
                 width: 100%;
                 object-fit: cover;
             }
-        }
-
-
-        .wave{
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            width: 100%;
-            height: 10%;
-            z-index: 1;
-        }
-
-    
+        }    
     }
 
     // Planes
 
     .planes{
-        height: 120vh;
+        /* height: 100vh; */
         width: 90%;
         max-width: 1200px;
         margin: 0 auto;
@@ -419,8 +408,9 @@ a{
 
                         background: rgb(255,199,108);
                         background: linear-gradient(90deg, rgba(255,199,108,1) 0%, rgba(252,163,17,1) 100%, rgba(2,0,36,1) 100%);
-                        padding: 8px 8px;
+                        padding: 12px 8px;
                         border-radius: 50px;
+                        border: none;
 
                         &:hover{
                             background: #fca311;
@@ -435,7 +425,239 @@ a{
 
 
 
-    //
+    //CALCULADORAS
+.calculadoras{
+    margin-top: 80px;
+    background-color: #14213D;
+    width: 100%;
+    height: 100%;
+    padding: 40px;
+
+    .calculadorasTitle{
+        font-size: 3rem;
+        font-weight: 700;
+        color: #fafafa;
+        text-align: center;
+        margin-bottom: 50px;
+    }
+    .calculadorasContainer{
+
+        display: grid;
+        gap: 20px;
+        grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+        justify-items: center;
+
+        .caloriasBasal{
+            min-width: 300px;
+            padding: 8px 24px;
+            background: #fafafa;
+            box-shadow: 0 4px 8px -3px rgba(0, 0, 0, 0.3);
+            border-radius: 20px;
+
+            .caloriesTitle{
+                text-align: center;
+                background: #222;
+                color: #fff;
+                margin: -10px -24px;
+                margin-bottom: 10px;
+                padding: 16px;              
+            }
+
+            .caloriesControls{
+
+                form{
+
+                    display: flex;
+                    flex-direction: column;
+                    gap: 4px;
+
+                    h3{
+                        font-size: 15px;
+                        text-transform: uppercase;
+                        margin: 16px 0 10px 0;
+
+                    }
+
+                    input[type="text"]{
+                        width: 100%;
+                        padding: 4px 16px;
+                        font-size: 24px;
+                        font-weight: bold;
+                        border: 1px solid #d5dbdd;
+                    }
+
+                    input[type="text"].invalidBMR{
+                        border: 1px solid red;
+                    }
+
+                    .gender{
+
+                        #famale{
+                            margin-left: 20px;
+                        }
+                    }
+
+                    .altura, .peso{
+                        position: relative;
+
+                        .unit{
+                            position: absolute;
+                            right: 20px;
+                            top: 50px;
+                            color: #777;
+                        }
+                    }
+
+                    .result{
+                        text-align: center;
+                        color: #4e4e4e;
+                        font-size: 18px;
+                        .calculateCaloriesBtn{
+                            padding: 8px 24px;
+                            margin: 16px 0;
+                            font-size: 18px;
+                            font-weight: 100;
+                            text-transform: uppercase;
+                            border: none;
+                            background: #333;
+                            color: #fff;
+                            cursor: pointer;
+                            margin-bottom: 32px;
+                        }
+                        .resultMessage{
+                            .calories{
+                                color: green;
+                                font-size: 38px;
+                                font-weight: 900;
+                                margin-right: 8px;
+                                vertical-align: middle;
+                            }
+                        }
+
+                        .errorMessage{
+                            color: red;
+                            font-size: 14px;
+                            display: none;
+                        }
+
+                        .errorMessage.activeBMR{
+                            display: block;
+                        }
+                    }
+                }
+            }
+        }
+
+        .imc{
+            min-width: 300px;
+            min-height: 500px;
+            padding: 8px 24px;
+            background: #fafafa;
+            box-shadow: 0 4px 8px -3px rgba(0, 0, 0, 0.3);
+            border-radius: 20px;
+
+            .imcTitle{
+                text-align: center;
+                background: #222;
+                color: #fff;
+                margin: -10px -24px;
+                margin-bottom: 10px;
+                padding: 16px; 
+            }
+
+            .imcControls{
+
+                form{
+
+                    display: flex;
+                    flex-direction: column;
+                    gap: 4px;
+
+                    h3{
+                        font-size: 15px;
+                        text-transform: uppercase;
+                        margin: 16px 0 10px 0;
+                    }
+
+                    input[type="text"]{
+                        width: 100%;
+                        padding: 4px 16px;
+                        font-size: 24px;
+                        font-weight: bold;
+                        border: 1px solid #d5dbdd;
+                    }
+
+                    input[type="text"].invalidIMC{
+                        border: 1px solid red;
+                    }
+
+                    .imcAltura, .imcPeso{
+                        position: relative;
+
+                        .unit{
+                            position: absolute;
+                            right: 20px;
+                            top: 50px;
+                            color: #777;
+                        }
+                    }
+                    
+                    .imcResult{
+                        text-align: center;
+                        color: #4e4e4e;
+                        font-size: 18px;
+
+                        .calculateImcBtn{
+                            padding: 8px 24px;
+                            margin: 16px 0;
+                            font-size: 18px;
+                            font-weight: 100;
+                            text-transform: uppercase;
+                            border: none;
+                            background: #333;
+                            color: #fff;
+                            cursor: pointer;
+                            margin-bottom: 32px;
+                        }
+
+                        .resultImcMessage{
+
+                            .imcResultText{
+                                color: green;
+                                font-size: 38px;
+                                font-weight: 900;
+                                margin-right: 8px;
+                                vertical-align: middle;
+                            }
+                        }
+
+                        .errorImcMessage{
+                            color: red;
+                            font-size: 14px;
+                            display: none;
+                        }
+
+                        .errorImcMessage.activeIMC{
+                            display: block;
+                        }
+
+                        .infoResult{
+                            ul{
+                                list-style: none;
+                                text-align: justify;
+                            }
+                            li{
+                                padding-top: 10px;
+                                font-size: 13px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+    
 }
 
 
@@ -472,6 +694,7 @@ a{
                 height: 100%;
 
                 .heroImage{
+                    
                     width: 90%;
                     height: 100%;
                     border-radius: 50px 0 50px 0;

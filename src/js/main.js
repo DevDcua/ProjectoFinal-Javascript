@@ -1,8 +1,9 @@
 // CART
 
-let cartIcon = document.querySelector('#cartIcon');
+let cartIcon  = document.querySelector ('#cartIcon');
     cartClass = document.querySelector ('.cart');
     closeCart = document.querySelector ('#closeCart');
+    btnBuy    = document.querySelector ('.btnBuy');
 
 // OPEN CART
 
@@ -18,6 +19,27 @@ closeCart.onclick = () =>{
 
     cartClass.classList.remove("activeCart");
 };
+
+
+// BTN BUY
+
+btnBuy.onclick = () =>{
+
+    if(cart.length == 0){
+        Swal.fire({
+            title: "El carrito esta vacio!",
+            icon: 'error',
+        })
+    } else {
+
+        Swal.fire({
+            title: "Compra realiza con exito!",
+            text: 'Disfruta tus planes!!',
+            icon: 'success',
+        })
+    } 
+}
+
 
 // PRODUCT
 
@@ -91,20 +113,31 @@ document.getElementById('root').innerHTML = categories.map((item)=>
 
 // CART WORKING
 
-const cart =[];
+let cart = [ ] || JSON.parse(localStorage.getItem("productos-carrito"));
+
+
+// LOCALSTORAGE
+
+let saveLocal = ()=>{
+
+    localStorage.setItem("productos-carrito", JSON.stringify(cart))
+}
+
 
 function addtocart(a){
     cart.push({...categories[a]});
     displaycart();
+    saveLocal();
 }
 
 function delElement(a){
     cart.splice(a, 1);
     displaycart();
+    saveLocal();
+
 };
 
-
-function displaycart(a){
+function displaycart(){
 
     let j = 0;
         total = 0;
@@ -119,17 +152,16 @@ function displaycart(a){
             let {image, title, price} = items;
                 total = total+price;
             document.querySelector('.totalPrice').innerHTML = "$ "+total+".00";
+
             return(
                 `<img src=${image} class="cartImg">
                  <div class="detailBox">
                     <div class="cartProductTitle">${title}</div>
                     <div class="cartPrice">$${price}</div>
                  </div>`+
-                 "<button onclick='delElement("+(j++)+")' class='buttonRemove'> <i  class='bx bxs-trash-alt cartRemove'></i> </button>"
-                 
+                 "<button onclick='delElement("+(j++)+")' class='buttonRemove'> <i  class='bx bxs-trash-alt cartRemove'></i> </button>"                
             )
-
-        }).join('');
+        }).join('');  
     }
 };
 

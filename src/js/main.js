@@ -113,27 +113,19 @@ document.getElementById('root').innerHTML = categories.map((item)=>
 
 // CART WORKING
 
-let cart = [ ] || JSON.parse(localStorage.getItem("productos-carrito"));
-
-
-// LOCALSTORAGE
-
-let saveLocal = ()=>{
-
-    localStorage.setItem("productos-carrito", JSON.stringify(cart))
-}
+let cart = JSON.parse(localStorage.getItem("productos-carrito")) || [];
 
 
 function addtocart(a){
     cart.push({...categories[a]});
     displaycart();
-    saveLocal();
+    localStorage.setItem("productos-carrito", JSON.stringify(cart))
 }
 
 function delElement(a){
     cart.splice(a, 1);
     displaycart();
-    saveLocal();
+    localStorage.setItem("productos-carrito", JSON.stringify(cart))
 
 };
 

@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/DevDcua/ProjectoFinal-Javascript#readme",
   "dependencies": {
-    "sass": "^1.56.2"
+    "sass": "^1.56.2",
+    "sweetalert2": "^11.7.0"
   }
 }
